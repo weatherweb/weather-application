@@ -30,3 +30,6 @@ Route::get('/weather/news', function () {
 Route::get('/weather/login', function () {
     return view('weather.index');
 });
+Route::get('blade', function () {
+    return view('child');
+});
