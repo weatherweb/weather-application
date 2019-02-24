@@ -14,3 +14,19 @@
 Route::get('/', function () {
     return view('welcome');
 });
+
+Route::get('/weather/', function () {
+    return view('weather.index');
+});
+
+Route::get('/weather/contact', function () {
+    return view('weather.contact');
+});
+
+Route::get('/weather/news', function () {
+    return view('weather.news');
+});
+
+Route::get('/weather/login', function () {
+    return view('weather.index');
+});
