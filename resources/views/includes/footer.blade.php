@@ -1,26 +1,37 @@
-<footer class="site-footer">
+<div class="footer">
     <div class="container">
-        <div class="row">
-            <div class="col-md-8">
-                <form action="#" class="subscribe-form">
-                    <input type="text" placeholder="Enter your email to subscribe...">
+        <div class="footer-top">
+            <div class="col-md-7 footer-left">
+                <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry.</p>
+                <p class="foot">Contrary to popular belief, Lorem Ipsum is not simply random text. It has roots
+                    piece </p>
+            </div>
+            <div class="col-md-5 submit">
+                <form>
+                    <input type="text" value="your email address" onfocus="this.value = '';"
+                           onblur="if (this.value == '') {this.value = 'your email address';}">
                     <input type="submit" value="Subscribe">
+                    <div class="clearfix"></div>
                 </form>
             </div>
-            <div class="col-md-3 col-md-offset-1">
-                <div class="social-links">
-                    <a href="#"><i class="fa fa-facebook"></i></a>
-                    <a href="#"><i class="fa fa-twitter"></i></a>
-                    <a href="#"><i class="fa fa-google-plus"></i></a>
-                    <a href="#"><i class="fa fa-pinterest"></i></a>
-                </div>
-            </div>
+            <div class="clearfix"></div>
         </div>
-
-        <p class="colophon">Copyright &copy;{{date('Y')}} Kashif Ali. All rights reserved</p>
+        <p class="footer-class">Copyright &copy;{{date('Y')}} ALL RIGHTS RESERVED.</p>
     </div>
-</footer> <!-- .site-footer -->
+    <script type="text/javascript">
+        $(document).ready(function () {
+            /*
+            var defaults = {
+                  containerID: 'toTop', // fading element id
+                containerHoverID: 'toTopHover', // fading element hover id
+                scrollSpeed: 1200,
+                easingType: 'linear'
+             };
+            */
+
+            $().UItoTop({easingType: 'easeOutQuart'});
+
+        });
+    </script>
+    <a href="#" id="toTop" style="display: block;"> <span id="toTopHover" style="opacity: 1;"> </span></a>
 </div>
-<script src="{{URL::asset('js/jquery-1.11.1.min.js')}}"></script>
-<script src="{{URL::asset('js/plugins.js')}}"></script>
-<script src="{{URL::asset('js/application.js')}}"></script>
