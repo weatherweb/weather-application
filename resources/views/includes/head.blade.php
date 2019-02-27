@@ -21,5 +21,6 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 <script type="text/javascript" src="{{URL::asset('js/move-top.js')}}"></script>
 <script type="text/javascript" src="{{URL::asset('js/easing.js')}}"></script>
 <!-- slide -->
+<meta name="csrf-token" content="{{csrf_token()}}">
 <title>Weather Application</title>
 

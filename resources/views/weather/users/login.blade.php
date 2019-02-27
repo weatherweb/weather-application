@@ -23,10 +23,16 @@
             <div class="contact">
                 <div class="contact-grids">
                     <div class="contact-form">
-                        <form>
+                        <form id="login-form">
+                            <div class="alert alert-danger" id="alert-danger" style="display: none">Email or password
+                                does not match,try again.
+                            </div>
+                            <div class="alert alert-success" id="alert-success" style="display: none">Login
+                                successfull
+                            </div>
                             <div class="contact-form-row col-md-12">
                                 <div>
-                                    <span>Email :</span>
+                                    <span>Email Address :</span>
                                     <input type="text" class="text" id="email" onfocus="" onblur="">
                                 </div>
                                 <div>
@@ -53,5 +59,34 @@
             <i> </i>
         </div>
     </div>
+    <script type="text/javascript">
+        $.ajaxSetup({
+            headers: {
+                'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+            }
+        });
+        $('#login-form').submit(function (event) {
+            event.preventDefault();
+            var postData = {
+                'email': $('#email').val(),
+                'password': $('#password').val()
+            };
+            $.ajax({
+                type: 'POST',
+                url: '/login',
+                data: postData,
+                success: function (response) {
+                    $('#alert-success').text(response.responseJSON);
+                    console.log(response.responseJSON);
+                    $('#alert-success').show();
+                },
+                error: function (response) {
+                    $('#alert-danger').text(response.responseJSON);
+                    $('#alert-danger').show();
+                    console.log(response);
+                }
+            });
+        });
+    </script>
     <!---->
 @stop

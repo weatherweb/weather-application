@@ -11,15 +11,15 @@
 |
 */
 
-Route::get('/', function () {
-    return view('weather.users.login');
-});
+Route::post('/login', 'UserController@loginUser');
 
-Route::get('/users/register', function () {
+Route::get('weather/users/login', 'UserController@loginUser');
+
+Route::get('weather/users/signup', function () {
     return view('weather.users.register');
 });
 
-Route::get('/users/', function () {
+Route::get('weather/users/', function () {
     return view('weather.users.login');
 });
 
@@ -38,6 +38,4 @@ Route::get('/weather/news', function () {
 Route::get('/weather/login', function () {
     return view('weather.index');
 });
-Route::get('/weather/users', function () {
-    return view('weather.users.register');
-});
+Route::get('/home', 'HomeController@index')->name('home');
