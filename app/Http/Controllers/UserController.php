@@ -5,15 +5,19 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Input;
 
+
 class UserController extends Controller
 {
+
     /**
      * Display a listing of the resource.
      *
      * @return \Illuminate\Http\Response
-     */
+ */
+
     public function index()
     {
+        //getCurrentWeather();
         return view('weather.index');
     }
 
@@ -24,6 +28,7 @@ class UserController extends Controller
         //
     }
 
+
     /**
      * Show the form for creating a new resource.
      *
@@ -31,8 +36,9 @@ class UserController extends Controller
      */
     public function create()
     {
-        //
+        return view('weather.users.register');
     }
+
 
     /**
      * Store a newly created resource in storage.

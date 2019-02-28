@@ -13,29 +13,12 @@
 
 Route::post('/login', 'UserController@loginUser');
 
-Route::get('weather/users/login', 'UserController@loginUser');
+Route::get('/register', 'UserController@create');
 
-Route::get('weather/users/signup', function () {
-    return view('weather.users.register');
-});
+Route::post('register', 'RegistrationController@store');
 
-Route::get('weather/users/', function () {
-    return view('weather.users.login');
-});
 
-Route::get('/weather/', function () {
-    return view('weather.index');
-});
+Route::get('/', 'UserController@getCurrentWeather');
 
-Route::get('/weather/contact', function () {
-    return view('weather.contact');
-});
 
-Route::get('/weather/news', function () {
-    return view('weather.news');
-});
-
-Route::get('/weather/login', function () {
-    return view('weather.index');
-});
-Route::get('/home', 'HomeController@index')->name('home');
+Route::get('/weather/', 'WeatherController@getCurrentWeather');
