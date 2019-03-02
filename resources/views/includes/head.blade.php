@@ -24,3 +24,4 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 <meta name="csrf-token" content="{{csrf_token()}}">
 <title>Weather Application</title>
 
+<link rel="stylesheet" href="{{URL::asset('css/style-details.css')}}" type="text/css" media="all"/>

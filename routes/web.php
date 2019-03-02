@@ -11,14 +11,26 @@
 |
 */
 
-Route::post('/login', 'UserController@loginUser');
+Route::get('/', function () {
+    return view('weather.index');
+});
 
-Route::get('/register', 'UserController@create');
+Route::get('/weather/', 'WeatherController@index');
 
-Route::post('register', 'RegistrationController@store');
+Route::get('/weather/current/', function () {
+    return view('weather.current-weather');
+});
 
+Route::get('/weather/daily/', function () {
+    return view('weather.daily-weather');
+});
 
-Route::get('/', 'UserController@getCurrentWeather');
+Route::get('/weather/hourly/', function () {
+    return view('weather.hourly-weather');
+});
 
+Route::get('/weather/current/getCurrent', 'WeatherController@getByCoordinates');
 
-Route::get('/weather/', 'WeatherController@getCurrentWeather');
+Route::get('/weather/hourly/getHourly', 'WeatherController@getByCoordinates');
+
+Route::get('/weather/daily/getDaily', 'WeatherController@getByCoordinates');
