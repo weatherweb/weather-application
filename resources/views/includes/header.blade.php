@@ -8,11 +8,11 @@
             <span class="menu"><img src="{{URL::asset('images/menu.png')}}" alt=""> </span>
             <ul>
                 <li class="active">
-                    <a href="{{url('/weather/')}}">HOME PAGE</a>
+                    <a href="{{url('/')}}">HOME PAGE</a>
                 </li>
-                <li><a href="/weather/"> WEATHER DETAILS</a></li>
-                <li><a href="404.html"> LOCATIONS </a></li>
-                <li><a href="contact.html">LOGIN</a></li>
+                <li><a href="{{url('/weather/')}}"> WEATHER DETAILS</a></li>
+                <li><a href="{{url('/weather/locations')}}"> GET COORDINATES </a></li>
+                <li><a href="{{url('/weather/login')}}">LOGIN</a></li>
             </ul>
             <!--script-->
             <script>

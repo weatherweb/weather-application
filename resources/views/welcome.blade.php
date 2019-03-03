@@ -72,11 +72,10 @@
         </div>
 
         <div class="links">
-            <a href="./weather/">Home</a>
-            <a href="./weather/">Weather details</a>
-            <a href="./weather/news">News</a>
-            <a href="./weather/contact">Contact</a>
-            <a href="./weather/login">Login</a>
+            <a href="{{url('/')}}">HOME PAGE</a>
+            <a href="{{url('/weather/')}}">WEATHER DETAILS</a>
+            <a href="{{url('/weather/locations')}}">GET CO-ORDINATES</a>
+            <a href="{{url('/weather/login')}}">LOGIN</a>
         </div>
     </div>
 </div>

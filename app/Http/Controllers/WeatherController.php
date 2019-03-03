@@ -33,83 +33,16 @@ class WeatherController extends Controller
         return view('weather.current-weather', compact('cities'));
     }
 
-    /**
-     * Show the form for creating a new resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
-    public function create()
-    {
-        //
-    }
 
-    /**
-     * Store a newly created resource in storage.
-     *
-     * @param  \Illuminate\Http\Request $request
-     * @return \Illuminate\Http\Response
-     */
-    public function store(Request $request)
-    {
-        //
-    }
-
-    /**
-     * Display the specified resource.
-     *
-     * @param  int $id
-     * @return \Illuminate\Http\Response
-     */
-    public function show($id)
-    {
-        //
-    }
-
-    /**
-     * Show the form for editing the specified resource.
-     *
-     * @param  int $id
-     * @return \Illuminate\Http\Response
-     */
-    public function edit($id)
-    {
-        //
-    }
-
-    /**
-     * Update the specified resource in storage.
-     *
-     * @param  \Illuminate\Http\Request $request
-     * @param  int $id
-     * @return \Illuminate\Http\Response
-     */
-    public function update(Request $request, $id)
-    {
-        //
-    }
-
-    /**
-     * Remove the specified resource from storage.
-     *
-     * @param  int $id
-     * @return \Illuminate\Http\Response
-     */
-    public function destroy($id)
-    {
-        //
-    }
-
-    public function getCurrentWeather(Request $request)
+    public function getLocations(Request $request)
     {
         try {
             $cityName = $request->input('cityName');
-            $zipCode = $request->input('zipCode');
-            echo $cityName . " " . $zipCode;
+            $countryName = $request->input('countryName');
             $lang = 'en';
             $units = 'metric';
             $owm = new OpenWeatherMap();
             $owm->setApiKey("f3fcf84fde7b0972497caa7111cabec9");
-            //$weather = $owm->getRawWeatherData($cityName, $units, $lang, null, 'json');
             $weather = $owm->getWeather($cityName, $units, $lang);
             return response()->json($weather);
         } catch (\Exception $ex) {
@@ -124,12 +57,14 @@ class WeatherController extends Controller
         $longitude = $request->input('longitude');
         $latitude = $request->input('latitude');
         $query = $latitude;
-        $query .= ",-";
+        if (strpos($longitude, '-') !== false) {
+            $query .= ",";
+        } else {
+            $query .= ",-";
+        }
         $query .= $longitude;
         $api_url = "https://api.darksky.net/forecast/8ddb46ea258fd1ce4d6b6f84e1c37f78/" . $query;
-
         $fore = json_decode(file_get_contents($api_url));
-
         return response()->json($fore);
     }
 

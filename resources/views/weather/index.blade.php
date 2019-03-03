@@ -24,38 +24,14 @@
                 <div id="owl-demo1" class="owl-carousel">
                     <div class="item-bottom">
                         <div class="item-right">
-                            <h1>best mobIle app</h1>
-                            <span>Download this cool app for free</span>
-                            <p>Dignissim eros luptatum dolore tation erat euismod, ad ut illum lobortis qui, velit
-                                ullamcorper, lobortis vel, vel ad duis lorem nisl. Iriure dolore et eros aliquip aliquip
-                                zzril vel praesent ex feugiat dolor nostrud eu vel delenit. Duis eu qui iusto, commodo
-                                consequat, consequat laoreet augue, duis at adipiscing ullamcorper facilisis dolor te
-                                odio. </p>
-                            <a href="#"><i> </i>Download </a>
+                            <h1>With Hourly Daily & Current weather support</h1>
+                            <span>Check out today! it's free for first 1000 call per day.!</span>
                         </div>
                     </div>
                     <div class="item-bottom">
                         <div class="item-right">
-                            <h1>best mobIle app</h1>
-                            <span>Download this cool app for free</span>
-                            <p>Dignissim eros luptatum dolore tation erat euismod, ad ut illum lobortis qui, velit
-                                ullamcorper, lobortis vel, vel ad duis lorem nisl. Iriure dolore et eros aliquip aliquip
-                                zzril vel praesent ex feugiat dolor nostrud eu vel delenit. Duis eu qui iusto, commodo
-                                consequat, consequat laoreet augue, duis at adipiscing ullamcorper facilisis dolor te
-                                odio. </p>
-                            <a href="#"><i> </i>Download </a>
-                        </div>
-                    </div>
-                    <div class="item-bottom">
-                        <div class="item-right">
-                            <h1>best mobIle app</h1>
-                            <span>Download this cool app for free</span>
-                            <p>Dignissim eros luptatum dolore tation erat euismod, ad ut illum lobortis qui, velit
-                                ullamcorper, lobortis vel, vel ad duis lorem nisl. Iriure dolore et eros aliquip aliquip
-                                zzril vel praesent ex feugiat dolor nostrud eu vel delenit. Duis eu qui iusto, commodo
-                                consequat, consequat laoreet augue, duis at adipiscing ullamcorper facilisis dolor te
-                                odio. </p>
-                            <a href="#"><i> </i>Download </a>
+                            <h1>best weather application details provider app</h1>
+                            <span>Check out today! it's free for first 1000 call per day.!</span>
                         </div>
                     </div>
                 </div>
@@ -77,40 +53,29 @@
         <div class="container">
             <div class="content-top">
                 <div class="col-md-4 grid">
-                    <h3><i></i> Cool clear weahter</h3>
-                    <p>Blandit, in, augue at tincidunt ut augue elit amet feugiat laoreet. Autem nisl tincidunt aliquip
-                        eu minim veniam feugait accumsan dolore eros </p>
-                    <a href="#" class="just-do-in">Just do it </a>
+                    <h3><i></i> Check Current Weather</h3>
+                    <a href="{{url('weather/current')}}" class="just-do-in">Check</a>
                 </div>
                 <div class="col-md-4 grid">
-                    <h3><i class="mid"></i>This Weather sucks</h3>
-                    <p>Blandit, in, augue at tincidunt ut augue elit amet feugiat laoreet. Autem nisl tincidunt aliquip
-                        eu minim veniam feugait accumsan dolore eros </p>
-                    <a href="#" class="just-do-in">Just do it </a>
+                    <h3><i class="mid"></i>Check Hourly Weather</h3>
+                    <a href="{{url('weather/hourly')}}" class="just-do-in">Check</a>
                 </div>
                 <div class="col-md-4 grid">
-                    <h3><i class="just"></i> Clouds All Around</h3>
-                    <p>Blandit, in, augue at tincidunt ut augue elit amet feugiat laoreet. Autem nisl tincidunt aliquip
-                        eu minim veniam feugait accumsan dolore eros</p>
-                    <a href="#" class="just-do-in">Just do it </a>
+                    <h3><i class="just"></i> Check Daily Weather</h3>
+                    <a href="{{url('weather/daily')}}" class="just-do-in">Check</a>
                 </div>
                 <div class="clearfix"></div>
             </div>
             <div class="content-grid">
-                <h2>IS IT TURE? EVERYDAY IS RAINY DAY. I HATE AUTUMN!</h2>
-                <p>Blandit ad vel adipiscing nostrud consequat, te quis euismod dolor nisl nostrud consequat ex blandit
-                    hendrerit ad et dolor. Nostrud, suscipit eu ipsum ullamcorper dolore in augue ullamcorper nulla.
-                    Eros velit esse nostrud qui, adipiscing esse luptatum at vel praesent erat, diam feugait luptatum
-                    sit lorem vel illum dignissim luptatum diam illum, duis ut, in. Lobortis at tincidunt ut augue elit
-                    amet feugiat laoreet luptatum nisl tincidunt aliquip eu minim veniam feugait accumsan dolore eros,
-                    feugait in dolor aliquam erat augue. Hendrerit, illum commodo facilisis, exerci, tation consequat,
-                    iriure, feugiat et facilisis molestie vulputate.</p>
+                <h2>IS IT TURE? EVERYDAY IS RAINY DAY. I LOVE AUTUMN!</h2>
+                <p>This is a Laravel based web application which provides weather information using Dark Sky API
+                    with current, hourly and daily bases weather.</p>
             </div>
         </div>
         <div class="content-bottom">
             <div class="container">
-                <h3>DO YOU HATE WITH ME?</h3>
-                <p>we are the biggest haters on planet, fella.</p>
+                <h3>About Team</h3>
+                <p>we are the biggest lovers on planet, fella.</p>
             </div>
             <i> </i>
         </div>

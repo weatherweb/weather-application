@@ -23,7 +23,7 @@
             <div class="contact">
                 <div class="contact-grids">
                     <div class="contact-form">
-                        <form id="login-form">
+                        <form>
                             <div class="alert alert-danger" id="alert-danger" style="display: none">Email or password
                                 does not match,try again.
                             </div>
@@ -33,11 +33,13 @@
                             <div class="contact-form-row col-md-12">
                                 <div>
                                     <span>Email Address :</span>
-                                    <input type="text" class="text" id="email" onfocus="" onblur="">
+                                    <input type="text" class="form-control" placeholder="example@gmail.com" id="email"
+                                           onfocus="" onblur="">
                                 </div>
                                 <div>
                                     <span>Password :</span>
-                                    <input type="text" class="text" id="password" onfocus="" onblur="">
+                                    <input type="password" class="form-control" id="password" placeholder="****** "
+                                           onfocus="" onblur="">
                                 </div>
                                 <div class="clearfix"></div>
                             </div>
@@ -65,6 +67,35 @@
                 'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
             }
         });
+        $(function () {
+            $("#loginBtn").on("click", function (event) {
+                event.preventDefault();
+                var email = $("#email").val();
+                var password = $("#password").val();
+                $.ajax({
+                    url: "/weather/user/getLogin",
+                    type: "POST",
+                    data: {
+                        email: email,
+                        password: password
+                    },
+                    success: function (response) {
+                        if (response == "-1") {
+                            $('#alert-danger').text("User not found,try again.");
+                            $('#alert-danger').show();
+                        } else {
+                            window.location.href = "/"
+                        }
+                    }
+                });
+
+            });
+
+            $("#registerBtn").on("click", function (event) {
+                event.preventDefault();
+                window.location.href = "/weather/register";
+            });
+        });
         $('#login-form').submit(function (event) {
             event.preventDefault();
             var postData = {
@@ -73,7 +104,7 @@
             };
             $.ajax({
                 type: 'POST',
-                url: '/login',
+                url: '/weather/user/getLogin',
                 data: postData,
                 success: function (response) {
                     $('#alert-success').text(response.responseJSON);

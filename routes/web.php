@@ -15,7 +15,25 @@ Route::get('/', function () {
     return view('weather.index');
 });
 
+Route::get('/weather/login', function () {
+    return view('weather.users.login');
+});
+
+Route::get('/weather/register', function () {
+    return view('weather.users.register');
+});
+
+Route::post('/weather/user/getLogin', 'UserController@getLoggedIn');
+
+Route::post('/weather/user/registerUser', 'UserController@registerUser');
+
 Route::get('/weather/', 'WeatherController@index');
+
+Route::get('/weather/locations', function () {
+    return view('weather.locations');
+});
+
+Route::get('/weather/location/getDetails', 'WeatherController@getLocations');
 
 Route::get('/weather/current/', function () {
     return view('weather.current-weather');
