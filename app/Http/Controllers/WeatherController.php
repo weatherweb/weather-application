@@ -2,13 +2,11 @@
 
 namespace App\Http\Controllers;
 
-use App\City;
 use Cmfcmf\OpenWeatherMap;
 use Illuminate\Http\Request;
 
 class WeatherController extends Controller
 {
-    private $cities;
     private $apiKey;
 
     /**
@@ -16,7 +14,6 @@ class WeatherController extends Controller
      */
     public function __construct()
     {
-        $this->cities = City::all();
         $apiKey = "f3fcf84fde7b0972497caa7111cabec9";//env('WEATHER_API_KEY',false);
     }
 
@@ -29,8 +26,7 @@ class WeatherController extends Controller
 
     public function index()
     {
-        $cities = $this->cities;
-        return view('weather.current-weather', compact('cities'));
+        return view('weather.current-weather');
     }
 
 
